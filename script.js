@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     let signUpContainer = document.querySelector(".signUpContainer");
     let signInContainer = document.querySelector(".signInContainer");
     let overlayContainer = document.querySelector(".overlayContainer");
-
+    let container = document.querySelector(".container");
+overlayContainer.classList.remove("active");
 signUpBtn.addEventListener('click',()=>{
     // console.log("Btn clicked")
     overlayContainer.classList.add("active");
