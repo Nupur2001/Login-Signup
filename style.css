@@ -15,14 +15,17 @@ body {
 }
 
 .container {
-  height: 500px;
+  /* height: 500px; */
+  height: 585px;
   text-align: center;
   justify-content: space-between;
   background-color: rgb(228, 226, 226);
   display: flex;
-  width: 775px;
+  /* width: 775px; */
+  width: 1000px;
   box-shadow: 0 0 10px 5px #c9c5c5;
   overflow: hidden;
+  position: relative;
 }
 
 .btn {
@@ -37,6 +40,10 @@ body {
 }
 
 .container .signInContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   padding: 50px;
   border-radius: 10px 0 0 10px;
@@ -66,7 +73,8 @@ body {
   margin: 20px 0;
 }
 
-.signInFrom input {
+.signInFrom input,
+.signUpFrom input {
   border-radius: 4px;
   border: none;
   background-color: #eee;
@@ -77,6 +85,7 @@ body {
 }
 
 .signInContainer .btn {
+    padding: 15px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
   color: white;
@@ -90,7 +99,7 @@ body {
   border-radius: 0 10px 10px 0;
   color: white;
   padding: 50px;
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background: #ff416c;
 }
 
 .signUpContainer h1 {
@@ -103,4 +112,51 @@ body {
   color: inherit;
   border: 1px solid white;
   border-radius: 2rem;
+}
+
+/* Overlay Container */
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  /* overflow: hidden; */
+  z-index: 100;
+    width: 100%;
+}
+
+.overlay {
+  position: relative;
+  left: -50%;
+  height: 100%;
+  display: flex;
+}
+
+.leftOverlay {
+  /* width: 108%; */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  color: white;
+  border-radius: 10px 0 0 10px;
+}
+.rightOverlay {
+  padding: 50px;
+  border-radius: 0 10px 10px 0;
+  background-color: #fff;
+}
+.leftOverlay h1 {
+  font-size: 600;
+}
+.leftOverlay .btn {
+  color: inherit;
+  border: 1px solid white;
+  padding: 10px 20px;
+}
+.rightOverlay h1 {
+    font-size: 45px;
+        font-weight: 800;
 }
