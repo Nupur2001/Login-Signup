@@ -47,6 +47,8 @@ body {
   background-color: #fff;
   padding: 50px;
   border-radius: 10px 0 0 10px;
+  z-index: 200;
+  transition: transform 0.6s ease-in-out;
 }
 
 .signInContainer h1 {
@@ -85,7 +87,7 @@ body {
 }
 
 .signInContainer .btn {
-    padding: 15px;
+  padding: 15px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
   color: white;
@@ -100,6 +102,8 @@ body {
   color: white;
   padding: 50px;
   background: #ff416c;
+  z-index: 200;
+  transition: transform 0.6s ease-in-out;
 }
 
 .signUpContainer h1 {
@@ -120,9 +124,9 @@ body {
   top: 0;
   left: 50%;
   height: 100%;
-  /* overflow: hidden; */
   z-index: 100;
-    width: 100%;
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
 }
 
 .overlay {
@@ -157,6 +161,23 @@ body {
   padding: 10px 20px;
 }
 .rightOverlay h1 {
-    font-size: 45px;
-        font-weight: 800;
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.rightOverlay .btn {
+  padding: 15px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: white;
+}
+
+.signInContainer.active,
+.signUpContainer.active {
+  z-index: 300;
+  transform: translateX(0);
+}
+.overlayContainer.active {
+  z-index: 200;
+/* transform: translateX(100%); */
 }
