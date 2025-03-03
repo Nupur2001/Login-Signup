@@ -1,128 +1,181 @@
-@import url("https://fonts.googleapis.com/css2?@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(253, 248, 248);
 }
 
 .container {
-    position: relative;
-    width: 1000px;
-    height: 600px;
-    display: flex;
-    background-color: #e4e4e4;
-    box-shadow: 0 0 10px 5px #c9c5c5;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-}
-
-.signInContainer,
-.signUpContainer {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition: transform 0.6s ease-in-out;
-}
-
-.signInContainer {
-    left: 0;
-    z-index: 2;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-
-.signUpContainer {
-    right: 0;
-    z-index: 1;
-    transform: translateX(100%);
-    background: #ff416c;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-
-.overlayContainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: transform 0.6s ease-in-out;
-}
-
-.overlay {
-    width: 200%;
-    display: flex;
-    height: 100%;
-    transform: translateX(-50%);
-    transition: transform 0.6s ease-in-out;
-}
-
-.leftOverlay, .rightOverlay {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-
-.leftOverlay {
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
-    color: white;
-}
-
-.rightOverlay {
-    background-color: #fff;
+  /* height: 500px; */
+  height: 585px;
+  text-align: center;
+  justify-content: space-between;
+  background-color: rgb(228, 226, 226);
+  display: flex;
+  /* width: 775px; */
+  width: 1000px;
+  box-shadow: 0 0 10px 5px #c9c5c5;
+  overflow: hidden;
+  position: relative;
 }
 
 .btn {
-    cursor: pointer;
-    border-radius: 2rem;
-    margin: 15px 0;
-    padding: 15px 40px;
-    font-size: 17px;
-    background-color: transparent;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: 1px solid white;
+  cursor: pointer;
+  border-radius: 2rem;
+  margin: 15px 0;
+  padding: 15px;
+  font-size: 17px;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.rightOverlay .btn, .signInContainer .btn {
-    border: 1px solid #ff4b2b;
-    background-color: #ff4b2b;
-    color: white;
+.container .signInContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px 0 0 10px;
+  z-index: 200;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* Sliding Effect */
-.container.active .signInContainer {
-    transform: translateX(-100%);
+.signInContainer h1 {
+  font-size: 40px;
 }
 
-.container.active .signUpContainer {
-    transform: translateX(0);
-    z-index: 2;
+.socialLinks {
+  margin: 10px 0;
 }
 
-.container.active .overlay {
-    transform: translateX(0);
+.socialLinks .link {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  border: 1px solid #444141;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 10px 0;
+  color: #2c2c2c;
+}
+
+.signInFrom {
+  margin: 20px 0;
+}
+
+.signInFrom input,
+.signUpFrom input {
+  border-radius: 4px;
+  border: none;
+  background-color: #eee;
+  padding: 15px;
+  width: 100%;
+  margin: 10px;
+  font-size: 17px;
+}
+
+.signInContainer .btn {
+  padding: 15px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: white;
+}
+
+.container .signUpContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  color: white;
+  padding: 50px;
+  background: #ff416c;
+  z-index: 200;
+  transition: transform 0.6s ease-in-out;
+}
+
+.signUpContainer h1 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.signUpContainer .btn {
+  padding: 13px 40px;
+  color: inherit;
+  border: 1px solid white;
+  border-radius: 2rem;
+}
+
+/* Overlay Container */
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  z-index: 100;
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay {
+  position: relative;
+  left: -50%;
+  height: 100%;
+  display: flex;
+}
+
+.leftOverlay {
+  /* width: 108%; */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  color: white;
+  border-radius: 10px 0 0 10px;
+}
+.rightOverlay {
+  padding: 50px;
+  border-radius: 0 10px 10px 0;
+  background-color: #fff;
+}
+.leftOverlay h1 {
+  font-size: 600;
+}
+.leftOverlay .btn {
+  color: inherit;
+  border: 1px solid white;
+  padding: 10px 20px;
+}
+.rightOverlay h1 {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.rightOverlay .btn {
+  padding: 15px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: white;
+}
+
+.signInContainer.active,
+.signUpContainer.active {
+  z-index: 300;
+}
+.overlayContainer.active {
+  z-index: 200;
 }
